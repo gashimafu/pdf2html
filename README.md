@@ -13,6 +13,7 @@
  add following lines in your init.el or something.
 
   (load "pdf2html")
+
   (pdf2html-install)
 
 ## effect
