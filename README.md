@@ -17,7 +17,7 @@
   (pdf2html-install)
 
 ## effect
- When you open pdf file in local or internet,
+ when you open pdf file in local or internet,
  you will view the html converted one.
 
 ## reason for making
