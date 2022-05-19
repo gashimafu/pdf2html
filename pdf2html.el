@@ -42,7 +42,9 @@
     (delete-directory pdf2html-working-directory t)
     (setq pdf2html-working-directory nil)))
 
+;;
 ;; main 
+;;
 (define-derived-mode pdf2html-mode html-mode "pdf2html"
   "convert pdf to html using pdftohtml unix command 
 with a working file because severel hyperlink-jump to itself.
@@ -59,6 +61,9 @@ And finally it will be rendered by eww-open-file emacs Lisp function."
   (eww-open-file tmpfile)
   (kill-buffer (previous-buffer)))
 
+;;
+;; initialize 
+;;
 (defun pdf2html-install ()
   "add pdf2txt entry to auto-mode-alist, magic-mode-alist, mailcap-usermime-data,
 create working directory and add its postprosess to kill-emacs-hook"
