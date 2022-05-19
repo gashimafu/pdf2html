@@ -50,15 +50,15 @@
 with a working file because severel hyperlink-jump to itself.
 And finally it will be rendered by eww-open-file emacs Lisp function."
   (set-buffer-multibyte t)
-  (setq tmpfile (make-temp-file (concat pdf2html-working-directory "/") nil ".html"))
-  (let ((command (format "pdftohtml -i -s -noframes - %s" tmpfile)))
+  (let* ((tmpfile (make-temp-file (concat pdf2html-working-directory "/") nil ".html"))
+  (command (format "pdftohtml -i -s -noframes - %s" tmpfile)))
 ;    (message "pdf2html cmd :\"%s\"" command)
     (shell-command-on-region
      (point-min) (point-max)
      command nil t
      "*pdf2html error*" t
-     ))
-  (eww-open-file tmpfile)
+     )
+  (eww-open-file tmpfile))
   (kill-buffer (previous-buffer)))
 
 ;;
